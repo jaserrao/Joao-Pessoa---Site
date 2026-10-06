@@ -1,0 +1,43 @@
+/* ESTILOS DE LISTA DE DESTINOS (PRAIAS E PONTOS TURÍSTICOS) */
+.page-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.page-header h2 {
+    color: #0077b6;
+    margin-bottom: 10px;
+}
+
+.destinos-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.destino-item {
+    background-color: white;
+    border-radius: 8px;
+    display: flex;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.destino-item img {
+    width: 350px;
+    height: 230px;
+    object-fit: cover;
+}
+
+.destino-info {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.destino-info h3 {
+    color: #0077b6;
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+}
