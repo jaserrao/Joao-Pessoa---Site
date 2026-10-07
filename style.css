@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: whitesmoke;
+    background-color: #f4f7f6;
     color: #333;
     line-height: 1.6;
     display: flex;
@@ -39,15 +39,15 @@ header h1 {
 nav ul {
     display: flex;
     list-style: none;
-    gap: 20px;
+    gap: 15px;
 }
 
 nav a {
     color: white;
     text-decoration: none;
     font-weight: 500;
-    padding: 8px 12px;
-    border-radius: 4px;
+    padding: 8px 16px;
+    border-radius: 20px;
     transition: background-color 0.3s;
 }
 
@@ -55,10 +55,10 @@ nav a:hover, nav a.active {
     background-color: #0096c7;
 }
 
-/* HERO (BANNER) */
+/* BANNER HERO (PÁGINA INICIAL) */
 .hero {
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkUHWIdiL3i-DrcF_LswtbUBAvE--CyeEJe-x1qMkKFA&s=10') center/cover no-repeat;
-    height: 300px;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLFzxo6q7nRyHoRhqb8bhutfj0UqSSbnp2gvCSgoEeZo8NJ3NxHddBhvPo&s=10') center/cover no-repeat;
+    height: 320px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -68,40 +68,50 @@ nav a:hover, nav a.active {
 }
 
 .hero-content h2 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     margin-bottom: 10px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
 }
 
-/* LAYOUT E CARDS DA HOME */
+.hero-content p {
+    font-size: 1.1rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+}
+
+/* CONTAINER PRINCIPAL */
 .container {
     max-width: 1100px;
     margin: 30px auto;
     padding: 0 20px;
     flex: 1;
+    position: relative;
 }
 
-.intro {
+.intro, .page-header {
     text-align: center;
     margin-bottom: 30px;
 }
 
-.intro h2 {
+.intro h2, .page-header h2 {
     color: #0077b6;
     margin-bottom: 10px;
 }
 
+/* GRID DE CARDS DA HOME */
 .cards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 25px;
 }
 
 .card {
     background-color: white;
-    border-radius: 8px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .card:hover {
@@ -116,6 +126,9 @@ nav a:hover, nav a.active {
 
 .card-body {
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 .card-body h3 {
@@ -124,23 +137,66 @@ nav a:hover, nav a.active {
 }
 
 .card-body p {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     color: #666;
+    flex: 1;
+}
+
+/* BOTÃO ARREDONDADO E CENTRALIZADO */
+.btn-container {
+    text-align: center;
+    margin-top: auto;
+    padding-top: 10px;
 }
 
 .btn {
     display: inline-block;
     background-color: #0077b6;
     color: white;
-    padding: 10px 18px;
+    padding: 10px 24px;
     text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 8px rgba(0, 119, 182, 0.3);
 }
 
 .btn:hover {
     background-color: #023e8a;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(2, 62, 138, 0.4);
+}
+
+/* BOTÃO DE VOLTAR NAS PÁGINAS INTERNAS */
+.btn-voltar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0077b6;
+    color: white;
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    position: absolute;
+    top: 0;
+    left: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-voltar:hover {
+    background-color: #0096c7;
+    transform: scale(1.05);
+}
+
+/* GRID DE CARDS 3 COLUNAS (PRAIAS E PONTOS TURÍSTICOS) */
+.cards-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
 }
 
 /* FOOTER */
@@ -156,14 +212,22 @@ footer {
     background-color: #00b4d8;
     color: white;
     border: none;
-    padding: 8px 14px;
-    border-radius: 4px;
+    padding: 8px 16px;
+    border-radius: 20px;
     cursor: pointer;
     margin-top: 10px;
     font-weight: bold;
+    transition: background-color 0.3s;
 }
 
 #btnTop:hover {
     background-color: #90e0ef;
     color: #000;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 900px) {
+    .cards-grid-3 {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
 }
